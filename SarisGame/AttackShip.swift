@@ -62,7 +62,7 @@ public class AttackShip : SCNNode{
             }
         }
         let velocity = SCNVector3Make(velocityX, velocityY, 0)
-        shipNode.runAction(SCNAction.rotateTo(x: CGFloat(target.x), y: CGFloat(target.y), z: 0.0, duration: 0.5, usesShortestUnitArc: true))
+        shipNode.rotation = SCNVector4Make(0.0, 0.0, 1.0, angle)
         self.physicsBody?.velocity = velocity
     }
 }
