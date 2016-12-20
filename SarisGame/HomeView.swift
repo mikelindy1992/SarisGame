@@ -68,31 +68,13 @@ class HomeView : UIViewController
         scnView.allowsCameraControl = false
         scnView.autoenablesDefaultLighting = true
         
-        // Add the user controls to the screen
-        /*let button = UIButton()
-        self.view?.addSubview(button)
-        button.backgroundColor = UIColor.gray
-        button.setTitleColor(UIColor.white, for: UIControlState.normal)
-        button.setTitle("Shop", for: UIControlState.normal)
-        button.addTarget(self, action: #selector(HomeView.shopButtonPressed), for: UIControlEvents.touchUpInside)
-        button.frame = CGRect(x: 100, y: 200, width: 100, height: 50)
-         */
-        
-        let button2 = UIButton()
-        self.view?.addSubview(button2)
-        button2.backgroundColor = UIColor.gray
-        button2.setTitleColor(UIColor.white, for: UIControlState.normal)
-        button2.setTitle("Ship Edit", for: UIControlState.normal)
-        button2.addTarget(self, action: #selector(HomeView.shipEditButtonPressed), for: UIControlEvents.touchUpInside)
-        button2.frame = CGRect(x: 300, y: 100, width: 100, height: 50)
-        
-        let button3 = UIButton()
-        self.view?.addSubview(button3)
-        button3.backgroundColor = UIColor.gray
-        button3.setTitleColor(UIColor.white, for: UIControlState.normal)
-        button3.setTitle("Battle!", for: UIControlState.normal)
-        button3.addTarget(self, action: #selector(HomeView.battleButtonPressed), for: UIControlEvents.touchUpInside)
-        button3.frame = CGRect(x: 500, y: 200, width: 100, height: 50)
+        //let button2 = UIButton()
+        //self.view?.addSubview(button2)
+        //button2.backgroundColor = UIColor.gray
+        //button2.setTitleColor(UIColor.white, for: UIControlState.normal)
+        //button2.setTitle("Ship Edit", for: UIControlState.normal)
+        //button2.addTarget(self, action: #selector(HomeView.shipEditButtonPressed), for: UIControlEvents.touchUpInside)
+        //button2.frame = CGRect(x: 300, y: 100, width: 100, height: 50)
     }
     
     func setupScene()
@@ -111,6 +93,7 @@ class HomeView : UIViewController
     
     func setupItems()
     {
+        // Setup the Shop Item
         let gemItem = GemItem()
         gemItem.createGem()
         gemItem.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 2.0, z: 0.0, duration: 1.0)))
@@ -118,7 +101,7 @@ class HomeView : UIViewController
         scnScene.rootNode.addChildNode(gemItem)
         gemItem.setNodeName(nodeName: "SHOP ITEM")
         
-        let shopText = SCNText(string: String("Shop"), extrusionDepth:1.0)
+        let shopText = SCNText(string: String("Shop"), extrusionDepth:0.5)
         let shopTextNode = SCNNode()
         shopText.font = UIFont (name: "Arial", size: 1.0)
         shopText.firstMaterial!.diffuse.contents = UIColor.white
@@ -127,6 +110,40 @@ class HomeView : UIViewController
         scnScene.rootNode.addChildNode(shopTextNode)
         shopTextNode.position = SCNVector3Make(-6.5, -4.0, 0.5)
         
+        // Add Ship Item
+        let shipItem = AttackShip()
+        shipItem.createShip()
+        shipItem.runAction(SCNAction.rotateBy(x: 0.0, y: 0.5, z: CGFloat(M_PI/2.0*(-1)), duration: 0.01))
+        shipItem.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: -2.0, y: 0.0, z: 0.0, duration: 1.25)))
+        shipItem.position = SCNVector3Make(0.0, 3.5, 0.0)
+        scnScene.rootNode.addChildNode(shipItem)
+        shipItem.setNodeName(nodeName: "SHIP EDIT")
+        
+        let shipText = SCNText(string: String("Ships"), extrusionDepth:0.5)
+        let shipTextNode = SCNNode()
+        shipText.font = UIFont (name: "Arial", size: 1.0)
+        shipText.firstMaterial!.diffuse.contents = UIColor.white
+        shipText.firstMaterial!.specular.contents = UIColor.white
+        shipTextNode.geometry = shipText
+        scnScene.rootNode.addChildNode(shipTextNode)
+        shipTextNode.position = SCNVector3Make(-1.5, 0.0, 0.5)
+        
+        // Setup the Battle Item
+        let tokenItem = TokenItem()
+        tokenItem.createToken()
+        tokenItem.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 1.5, z: 0.0, duration: 1.0)))
+        tokenItem.position = SCNVector3Make(5.5, -1.0, 0.0)
+        scnScene.rootNode.addChildNode(tokenItem)
+        tokenItem.setNodeName(nodeName: "BATTLE WORLD")
+        
+        let battleText = SCNText(string: String("Battle"), extrusionDepth:0.5)
+        let battleTextNode = SCNNode()
+        battleText.font = UIFont (name: "Arial", size: 1.0)
+        battleText.firstMaterial!.diffuse.contents = UIColor.white
+        battleText.firstMaterial!.specular.contents = UIColor.white
+        battleTextNode.geometry = battleText
+        scnScene.rootNode.addChildNode(battleTextNode)
+        battleTextNode.position = SCNVector3Make(4.0, -4.0, 0.5)
     }
     
     func handleTouchFor(node: SCNNode)

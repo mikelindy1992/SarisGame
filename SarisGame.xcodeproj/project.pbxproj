@@ -26,7 +26,6 @@
 		11FA8E161DF9FCDC006ABAD4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11FA8E141DF9FCDC006ABAD4 /* LaunchScreen.storyboard */; };
 		11FA8E211DF9FCDC006ABAD4 /* SarisGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FA8E201DF9FCDC006ABAD4 /* SarisGameTests.swift */; };
 		11FA8E2C1DF9FCDC006ABAD4 /* SarisGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FA8E2B1DF9FCDC006ABAD4 /* SarisGameUITests.swift */; };
-		11FA8E3B1DFA0DDC006ABAD4 /* SarisGame.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11FA8E3A1DFA0DDC006ABAD4 /* SarisGame.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,7 +71,6 @@
 		11FA8E271DF9FCDC006ABAD4 /* SarisGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SarisGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		11FA8E2B1DF9FCDC006ABAD4 /* SarisGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SarisGameUITests.swift; sourceTree = "<group>"; };
 		11FA8E2D1DF9FCDC006ABAD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		11FA8E3A1DFA0DDC006ABAD4 /* SarisGame.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SarisGame.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,7 +163,6 @@
 				11FA8E121DF9FCDC006ABAD4 /* Assets.xcassets */,
 				11FA8E141DF9FCDC006ABAD4 /* LaunchScreen.storyboard */,
 				11FA8E171DF9FCDC006ABAD4 /* Info.plist */,
-				11FA8E3A1DFA0DDC006ABAD4 /* SarisGame.xcassets */,
 			);
 			path = SarisGame;
 			sourceTree = "<group>";
@@ -299,7 +296,6 @@
 				118989481E025DAB0085F05B /* ButtonBackground.png in Resources */,
 				11FA8E161DF9FCDC006ABAD4 /* LaunchScreen.storyboard in Resources */,
 				11FA8E131DF9FCDC006ABAD4 /* Assets.xcassets in Resources */,
-				11FA8E3B1DFA0DDC006ABAD4 /* SarisGame.xcassets in Resources */,
 				11FA8E111DF9FCDC006ABAD4 /* Main.storyboard in Resources */,
 				1189894A1E025FF50085F05B /* CoolUniverse.jpg in Resources */,
 			);
@@ -409,6 +405,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -458,6 +455,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

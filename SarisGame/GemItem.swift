@@ -11,8 +11,6 @@ import SceneKit
 
 public class GemItem : SCNNode{
     
-    var theSpeed = Float(5.0)
-    
     func createGem() {
         // Make the top of the gem
         let gemTop:SCNNode = SCNNode()
@@ -20,7 +18,7 @@ public class GemItem : SCNNode{
         let topMaterial = SCNMaterial()
         topMaterial.diffuse.contents = UIColor.red
         geometryTop.firstMaterial = topMaterial
-        gemTop.geometry = geometryTop;
+        gemTop.geometry = geometryTop
         
         // Make the top of the gem
         let gemBottom:SCNNode = SCNNode()

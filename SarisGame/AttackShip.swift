@@ -65,6 +65,14 @@ public class AttackShip : SCNNode{
         shipNode.rotation = SCNVector4Make(0.0, 0.0, 1.0, angle)
         self.physicsBody?.velocity = velocity
     }
+    
+    func setNodeName(nodeName: String)
+    {
+        for node:SCNNode in self.childNodes
+        {
+            node.name = nodeName;
+        }
+    }
 }
 
 
