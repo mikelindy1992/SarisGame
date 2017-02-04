@@ -67,14 +67,6 @@ class HomeView : UIViewController
         scnView.showsStatistics = false
         scnView.allowsCameraControl = false
         scnView.autoenablesDefaultLighting = true
-        
-        //let button2 = UIButton()
-        //self.view?.addSubview(button2)
-        //button2.backgroundColor = UIColor.gray
-        //button2.setTitleColor(UIColor.white, for: UIControlState.normal)
-        //button2.setTitle("Ship Edit", for: UIControlState.normal)
-        //button2.addTarget(self, action: #selector(HomeView.shipEditButtonPressed), for: UIControlEvents.touchUpInside)
-        //button2.frame = CGRect(x: 300, y: 100, width: 100, height: 50)
     }
     
     func setupScene()

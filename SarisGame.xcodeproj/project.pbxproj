@@ -18,6 +18,10 @@
 		11A0D8411DFFB23F0083809F /* ShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0D8401DFFB23F0083809F /* ShopView.swift */; };
 		11A0D8431DFFB24C0083809F /* BattleWorldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0D8421DFFB24C0083809F /* BattleWorldView.swift */; };
 		11A0D8451DFFB2590083809F /* PreBattleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0D8441DFFB2590083809F /* PreBattleView.swift */; };
+		11A5F9081E4576C9003E4E03 /* ShipScrollView.png in Resources */ = {isa = PBXBuildFile; fileRef = 11A5F9071E4576C9003E4E03 /* ShipScrollView.png */; };
+		11A5F90A1E45783F003E4E03 /* ShipButtonBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 11A5F9091E45783F003E4E03 /* ShipButtonBackground.png */; };
+		11AF41B81E42D72A000FE7B7 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AF41B71E42D72A000FE7B7 /* UserInfo.swift */; };
+		11AF41BA1E42D7CE000FE7B7 /* ShipObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AF41B91E42D7CE000FE7B7 /* ShipObject.swift */; };
 		11BDAB9B1E04AA1500507DD6 /* GemItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BDAB9A1E04AA1500507DD6 /* GemItem.swift */; };
 		11BDAB9D1E04D3F100507DD6 /* TokenItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BDAB9C1E04D3F100507DD6 /* TokenItem.swift */; };
 		11FA8E0A1DF9FCDC006ABAD4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FA8E091DF9FCDC006ABAD4 /* AppDelegate.swift */; };
@@ -57,6 +61,10 @@
 		11A0D8401DFFB23F0083809F /* ShopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopView.swift; sourceTree = "<group>"; };
 		11A0D8421DFFB24C0083809F /* BattleWorldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleWorldView.swift; sourceTree = "<group>"; };
 		11A0D8441DFFB2590083809F /* PreBattleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreBattleView.swift; sourceTree = "<group>"; };
+		11A5F9071E4576C9003E4E03 /* ShipScrollView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ShipScrollView.png; sourceTree = "<group>"; };
+		11A5F9091E45783F003E4E03 /* ShipButtonBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ShipButtonBackground.png; sourceTree = "<group>"; };
+		11AF41B71E42D72A000FE7B7 /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		11AF41B91E42D7CE000FE7B7 /* ShipObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShipObject.swift; sourceTree = "<group>"; };
 		11BDAB9A1E04AA1500507DD6 /* GemItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GemItem.swift; sourceTree = "<group>"; };
 		11BDAB9C1E04D3F100507DD6 /* TokenItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenItem.swift; sourceTree = "<group>"; };
 		11FA8E061DF9FCDB006ABAD4 /* SarisGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SarisGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,6 +112,8 @@
 				118989491E025FF40085F05B /* CoolUniverse.jpg */,
 				118989471E025DAB0085F05B /* ButtonBackground.png */,
 				118989451E0240870085F05B /* SpaceBackground.jpg */,
+				11A5F9071E4576C9003E4E03 /* ShipScrollView.png */,
+				11A5F9091E45783F003E4E03 /* ShipButtonBackground.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -132,6 +142,15 @@
 			name = Screens;
 			sourceTree = "<group>";
 		};
+		11AF41B61E42D700000FE7B7 /* DataObjects */ = {
+			isa = PBXGroup;
+			children = (
+				11AF41B71E42D72A000FE7B7 /* UserInfo.swift */,
+				11AF41B91E42D7CE000FE7B7 /* ShipObject.swift */,
+			);
+			name = DataObjects;
+			sourceTree = "<group>";
+		};
 		11FA8DFD1DF9FCDB006ABAD4 = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +174,7 @@
 		11FA8E081DF9FCDB006ABAD4 /* SarisGame */ = {
 			isa = PBXGroup;
 			children = (
+				11AF41B61E42D700000FE7B7 /* DataObjects */,
 				118989441E0240730085F05B /* Images */,
 				11A0D8351DFF63910083809F /* Screens */,
 				11A0D8301DFE26590083809F /* Ships */,
@@ -294,6 +314,8 @@
 			files = (
 				118989461E0240870085F05B /* SpaceBackground.jpg in Resources */,
 				118989481E025DAB0085F05B /* ButtonBackground.png in Resources */,
+				11A5F9081E4576C9003E4E03 /* ShipScrollView.png in Resources */,
+				11A5F90A1E45783F003E4E03 /* ShipButtonBackground.png in Resources */,
 				11FA8E161DF9FCDC006ABAD4 /* LaunchScreen.storyboard in Resources */,
 				11FA8E131DF9FCDC006ABAD4 /* Assets.xcassets in Resources */,
 				11FA8E111DF9FCDC006ABAD4 /* Main.storyboard in Resources */,
@@ -326,6 +348,7 @@
 				11A0D8371DFF63B00083809F /* BattleView.swift in Sources */,
 				11FA8E0A1DF9FCDC006ABAD4 /* AppDelegate.swift in Sources */,
 				11A0D8411DFFB23F0083809F /* ShopView.swift in Sources */,
+				11AF41B81E42D72A000FE7B7 /* UserInfo.swift in Sources */,
 				11A0D83F1DFFB2220083809F /* ShipEditView.swift in Sources */,
 				11A0D8321DFE26860083809F /* AttackShip.swift in Sources */,
 				11A0D83D1DFFB20A0083809F /* HomeView.swift in Sources */,
@@ -333,6 +356,7 @@
 				11A0D8431DFFB24C0083809F /* BattleWorldView.swift in Sources */,
 				11BDAB9D1E04D3F100507DD6 /* TokenItem.swift in Sources */,
 				11A0D8451DFFB2590083809F /* PreBattleView.swift in Sources */,
+				11AF41BA1E42D7CE000FE7B7 /* ShipObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
