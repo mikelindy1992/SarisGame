@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import SceneKit
+import Firebase
 
 class LoginView : UIViewController
 {
@@ -76,103 +77,36 @@ class LoginView : UIViewController
         button2.setTitle("Register", for: UIControlState.normal)
         button2.addTarget(self, action: #selector(LoginView.registerButtonPressed), for: UIControlEvents.touchUpInside)
         button2.frame = CGRect(x: (screen.width / 2) + 25, y: 200, width: 100, height: 50)
+        
     }
     
     func registerButtonPressed()
     {
-        var request = URLRequest(url: URL(string: "http://www.millslindy.com/game_login.php")!)
-        request.httpMethod = "POST"
+
         let username = usernameInput.text ?? "uname"
         let password = passwordInput.text ?? "password"
-        let postString = "action=REGISTER&uname=" + username + "&pass=" + password
-        request.httpBody = postString.data(using: .utf8)
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data, error == nil else {
-                print("error=\(error)")
-                return
+        FIRAuth.auth()?.createUser(withEmail: username, password: password) { (user, error) in
+            if error != nil{
+                self.registerFailed()
             }
-            
-            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
-                print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                print("response = \(response)")
-            }
-            
-            do
-            {
-                //let responseString = String(data: data, encoding: .utf8)
-                let parsedData = try JSONSerialization.jsonObject(with: data as Data, options: .allowFragments) as! Dictionary<String, AnyObject>
-                let resultStr = parsedData["success"] as! String
-                print("responseString = \(parsedData["success"] as! String )")
-                if(resultStr == "true")
-                {
-                    DispatchQueue.main.async {
-                        self.registerSuccess()
-                    }
-                }
-                else
-                {
-                    DispatchQueue.main.async {
-                        self.registerFailed()
-                    }
-                }
-            }
-            catch
-            {
-                print(error)
-            }
-            
             
         }
-        task.resume()
     }
     
     func loginButtonPressed()
     {
-        var request = URLRequest(url: URL(string: "http://www.millslindy.com/game_login.php")!)
-        request.httpMethod = "POST"
+        
         let username = usernameInput.text ?? "uname"
         let password = passwordInput.text ?? "password"
-        let postString = "action=LOGIN&uname=" + username + "&pass=" + password
-        request.httpBody = postString.data(using: .utf8)
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data, error == nil else {
-                print("error=\(error)")
-                return
+        FIRAuth.auth()?.signIn(withEmail: username, password: password) { (user, error) in
+            if error == nil {
+                self.loginSuccess(uid : user!)
+            }else{
+                self.loginFailed()
             }
-            
-            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
-                print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                print("response = \(response)")
-            }
-            
-            do
-            {
-                //let responseString = String(data: data, encoding: .utf8)
-                let parsedData = try JSONSerialization.jsonObject(with: data as Data, options: .allowFragments) as! Dictionary<String, AnyObject>
-                let resultStr = parsedData["success"] as! String
-                print("responseString = \(parsedData["success"] as! String )")
-                if(resultStr == "true")
-                {
-                    DispatchQueue.main.async {
-                        self.loginSuccess()
-                    }
-                }
-                else
-                {
-                    DispatchQueue.main.async {
-                        self.loginFailed()
-                    }
-                }
-            }
-            catch
-            {
-                print(error)
-            }
-            
-            
         }
-        task.resume()
     }
+    
     
     func registerSuccess()
     {
@@ -187,16 +121,9 @@ class LoginView : UIViewController
         self.present(alert, animated: true, completion: nil)
     }
     
-    func loginSuccess()
+    func loginSuccess(uid : FIRUser?)
     {
-        // Save login info to user defaults
-        let defaults = UserDefaults.standard
         
-        let uname = usernameInput.text ?? "uname"
-        let pass = passwordInput.text ?? "password"
-        
-        defaults.set(uname, forKey: "username")
-        defaults.set(pass, forKey: "password")
         
         // Since login was successful we can go to the home view
         self.present(HomeView(), animated: true, completion: nil)
