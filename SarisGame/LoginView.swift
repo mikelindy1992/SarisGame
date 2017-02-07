@@ -15,7 +15,7 @@ class LoginView : UIViewController
     
     var usernameInput: UITextField!
     var passwordInput: UITextField!
-    var hasPassword: Bool!
+
     
     override func viewDidLoad()
     {
@@ -43,6 +43,7 @@ class LoginView : UIViewController
         imageView.frame = frame
         self.view?.addSubview(imageView)
         
+        
         //self.view?.backgroundColor = UIColor(patternImage: image!)
         
         usernameInput = UITextField()
@@ -50,6 +51,7 @@ class LoginView : UIViewController
         usernameInput.backgroundColor = UIColor.white
         usernameInput.frame = CGRect(x: (screen.width/2) - 150, y: 100, width: 300, height: 30)
         usernameInput.autocorrectionType = UITextAutocorrectionType.no
+        usernameInput.textAlignment = .center
         usernameInput.placeholder = "Username"
         
         passwordInput = UITextField()
@@ -57,7 +59,20 @@ class LoginView : UIViewController
         passwordInput.backgroundColor = UIColor.white
         passwordInput.frame = CGRect(x: (screen.width/2) - 150, y: 150, width: 300, height: 30)
         passwordInput.isSecureTextEntry = true;
+        passwordInput.textAlignment = .center
         passwordInput.placeholder = "Pasword"
+        
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: 30))
+        label.center = CGPoint(x: (screen.width/2), y: 212.5)
+        label.textAlignment = .center
+        label.text = "I Forgot My Password"
+        label.isUserInteractionEnabled = true
+        label.textColor = UIColor.white
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.passwordReset(_ : )))
+        label.addGestureRecognizer(tap)
+        
+        self.view.addSubview(label)
         
         let button = UIButton()
         self.view?.addSubview(button)
@@ -67,7 +82,7 @@ class LoginView : UIViewController
         button.setBackgroundImage(buttonImage, for: .normal)
         button.setTitle("Login", for: UIControlState.normal)
         button.addTarget(self, action: #selector(LoginView.loginButtonPressed), for: UIControlEvents.touchUpInside)
-        button.frame = CGRect(x: (screen.width / 2) - 125, y: 200, width: 100, height: 50)
+        button.frame = CGRect(x: (screen.width / 2) - 125, y: 250, width: 100, height: 50)
         
         let button2 = UIButton()
         self.view?.addSubview(button2)
@@ -76,34 +91,59 @@ class LoginView : UIViewController
         button2.setBackgroundImage(buttonImage, for: .normal)
         button2.setTitle("Register", for: UIControlState.normal)
         button2.addTarget(self, action: #selector(LoginView.registerButtonPressed), for: UIControlEvents.touchUpInside)
-        button2.frame = CGRect(x: (screen.width / 2) + 25, y: 200, width: 100, height: 50)
+        button2.frame = CGRect(x: (screen.width / 2) + 25, y: 250, width: 100, height: 50)
         
     }
+    
+    func invalidEmail(){
+        let alert = UIAlertController(title: "Invalid Email", message: "The email you provided is in an invalid format!", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(okAction)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func isValidEmail(testStr:String) -> Bool {
+        // print("validate calendar: \(testStr)")
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailTest.evaluate(with: testStr)
+    }
+    
     
     func registerButtonPressed()
     {
 
-        let username = usernameInput.text ?? "uname"
-        let password = passwordInput.text ?? "password"
-        FIRAuth.auth()?.createUser(withEmail: username, password: password) { (user, error) in
-            if error != nil{
-                self.registerFailed()
-            }
+        let username :String? = usernameInput.text
+        let password :String? = passwordInput.text
+        if isValidEmail(testStr: username!) && password != nil{
+            FIRAuth.auth()?.createUser(withEmail: username!, password: password!) { (user, error) in
+                if error != nil{
+                    self.registerFailed()
+                }
             
+            }
+        }else{
+            self.invalidEmail()
         }
     }
     
     func loginButtonPressed()
     {
         
-        let username = usernameInput.text ?? "uname"
-        let password = passwordInput.text ?? "password"
-        FIRAuth.auth()?.signIn(withEmail: username, password: password) { (user, error) in
-            if error == nil {
-                self.loginSuccess(uid : user!)
-            }else{
-                self.loginFailed()
+        let username :String? = usernameInput.text
+        let password :String? = passwordInput.text
+        if isValidEmail(testStr: username!) && password != nil{
+            FIRAuth.auth()?.signIn(withEmail: username!, password: password!) { (user, error) in
+                if error == nil {
+                    self.loginSuccess(uid : user!)
+                }else{
+                    self.loginFailed()
+                }
+    
             }
+        }else{
+            self.invalidEmail()
         }
     }
     
@@ -136,5 +176,35 @@ class LoginView : UIViewController
         let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         alert.addAction(okAction)
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    func passwordReset(_ sender: UITapGestureRecognizer)
+    {
+        let email = usernameInput.text ?? "uname"
+
+        
+        FIRAuth.auth()?.sendPasswordReset(withEmail: email) { (error) in
+            var message : String?
+            if error == nil {
+                message = "A password reset email has been sent to the specified email"
+                
+            }else{
+                if let errCode = FIRAuthErrorCode(rawValue: (error?._code)!) {
+                    switch errCode {
+                    case .errorCodeInvalidEmail:
+                        //this case only handles emails that are not in the correct format
+                        message = "There is no account associated with the email provided"
+                    default:
+                        message = "Your password reset request could not be processed at this time"
+                    }
+                }
+            }
+            let alert = UIAlertController(title: "Click", message: message, preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(okAction)
+            self.present(alert, animated: true, completion: nil)
+        }
+
+
     }
 }
