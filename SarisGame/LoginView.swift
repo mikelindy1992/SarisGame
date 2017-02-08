@@ -114,18 +114,7 @@ class LoginView : UIViewController
     func registerButtonPressed()
     {
 
-        let username :String? = usernameInput.text
-        let password :String? = passwordInput.text
-        if isValidEmail(testStr: username!) && password != nil{
-            FIRAuth.auth()?.createUser(withEmail: username!, password: password!) { (user, error) in
-                if error != nil{
-                    self.registerFailed()
-                }
-            
-            }
-        }else{
-            self.invalidEmail()
-        }
+        self.present(RegisterView(), animated: true, completion: nil)
     }
     
     func loginButtonPressed()
@@ -199,7 +188,7 @@ class LoginView : UIViewController
                     }
                 }
             }
-            let alert = UIAlertController(title: "Click", message: message, preferredStyle: .alert)
+            let alert = UIAlertController(title: "", message: message, preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
             alert.addAction(okAction)
             self.present(alert, animated: true, completion: nil)

@@ -34,6 +34,7 @@
 		8C44B07DEE95D0E21D9414CF /* Pods_SarisGameUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B315BB7F88FC643B0D650FF2 /* Pods_SarisGameUITests.framework */; };
 		BF601D1E75DAF31A628E59E8 /* Pods_SarisGameTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A045A6AF2D6964D874F8F9 /* Pods_SarisGameTests.framework */; };
 		C960C74E1E4684FF002BE93D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C960C74D1E4684FF002BE93D /* GoogleService-Info.plist */; };
+		C960C7501E49543A002BE93D /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960C74F1E495439002BE93D /* RegisterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		B014F1AAD2624ABC28782BC2 /* Pods-SarisGameTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SarisGameTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SarisGameTests/Pods-SarisGameTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B315BB7F88FC643B0D650FF2 /* Pods_SarisGameUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SarisGameUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C960C74D1E4684FF002BE93D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C960C74F1E495439002BE93D /* RegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 				11A0D8401DFFB23F0083809F /* ShopView.swift */,
 				11A0D8421DFFB24C0083809F /* BattleWorldView.swift */,
 				11A0D8441DFFB2590083809F /* PreBattleView.swift */,
+				C960C74F1E495439002BE93D /* RegisterView.swift */,
 			);
 			name = Screens;
 			sourceTree = "<group>";
@@ -538,6 +541,7 @@
 				11BDAB9B1E04AA1500507DD6 /* GemItem.swift in Sources */,
 				11A0D8371DFF63B00083809F /* BattleView.swift in Sources */,
 				11FA8E0A1DF9FCDC006ABAD4 /* AppDelegate.swift in Sources */,
+				C960C7501E49543A002BE93D /* RegisterView.swift in Sources */,
 				11A0D8411DFFB23F0083809F /* ShopView.swift in Sources */,
 				11AF41B81E42D72A000FE7B7 /* UserInfo.swift in Sources */,
 				11A0D83F1DFFB2220083809F /* ShipEditView.swift in Sources */,
