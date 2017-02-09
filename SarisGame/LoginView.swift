@@ -136,20 +136,6 @@ class LoginView : UIViewController
         }
     }
     
-    
-    func registerSuccess()
-    {
-        self.present(HomeView(), animated: true, completion: nil)
-    }
-    
-    func registerFailed()
-    {
-        let alert = UIAlertController(title: "Registration Failed", message: "Username is already in use, please use another name!", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-        alert.addAction(okAction)
-        self.present(alert, animated: true, completion: nil)
-    }
-    
     func loginSuccess(uid : FIRUser?)
     {
         
