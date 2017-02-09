@@ -16,6 +16,7 @@ class UserInfo
     var theShipPartCount:Int = 0
     var theItemPartCount:Int = 0
     var theShipObjects:Array<ShipObject> = []
+    var theItemObjects:Array<ItemObject> = []
     
     func BuildObjectFromJSON(jsonString: String) -> Bool
     {
@@ -89,6 +90,57 @@ class UserInfo
                     }
                 }
             }
+            if(json.index(forKey: "items") != nil)
+            {
+                let itemArray = json["items"] as! Array<Dictionary<String, AnyObject>>
+                isValidJson += 1
+                
+                for item in itemArray
+                {
+                    var isValid = 0
+                    var item_id = 0
+                    var item_type = 0
+                    var item_stat = 0
+                    var item_ship_id = 0
+                    var item_ability = 0
+                    if(item.index(forKey: "item_id") != nil)
+                    {
+                        item_id = item["item_id"] as! Int
+                        isValid += 1
+                    }
+                    if(item.index(forKey: "item_type") != nil)
+                    {
+                        item_type = item["item_type"] as! Int
+                        isValid += 1
+                    }
+                    if(item.index(forKey: "item_stat") != nil)
+                    {
+                        item_stat = item["item_stat"] as! Int
+                        isValid += 1
+                    }
+                    if(item.index(forKey: "item_ship_id") != nil)
+                    {
+                        item_ship_id = item["item_ship_id"] as! Int
+                        isValid += 1
+                    }
+                    if(item.index(forKey: "item_ability") != nil)
+                    {
+                        item_ability = item["item_ability"] as! Int
+                        isValid += 1
+                    }
+                    if(isValid == 5)
+                    {
+                        let itemObject = ItemObject()
+                        itemObject.CreateItem(id: item_id, type: item_type, boost: item_stat, ability: item_ability, shipId: item_ship_id)
+                        theItemObjects.append(itemObject)
+                    }
+                    else
+                    {
+                        isValidJson -= 1
+                        break
+                    }
+                }
+            }
             
             
         }
@@ -98,7 +150,7 @@ class UserInfo
         }
         
         // Check if the JSON was valid!
-        if(isValidJson != 6)
+        if(isValidJson != 7)
         {
             return false
         }
@@ -129,5 +181,10 @@ class UserInfo
     func GetShips() -> Array<ShipObject>
     {
         return theShipObjects
+    }
+    
+    func GetItems() -> Array<ItemObject>
+    {
+        return theItemObjects
     }
 }

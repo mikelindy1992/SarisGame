@@ -20,6 +20,19 @@
 		11A0D8451DFFB2590083809F /* PreBattleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0D8441DFFB2590083809F /* PreBattleView.swift */; };
 		11A5F9081E4576C9003E4E03 /* ShipScrollView.png in Resources */ = {isa = PBXBuildFile; fileRef = 11A5F9071E4576C9003E4E03 /* ShipScrollView.png */; };
 		11A5F90A1E45783F003E4E03 /* ShipButtonBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 11A5F9091E45783F003E4E03 /* ShipButtonBackground.png */; };
+		11A5F90F1E4684D1003E4E03 /* UtilityShipIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 11A5F90B1E4684D1003E4E03 /* UtilityShipIcon.png */; };
+		11A5F9101E4684D1003E4E03 /* SupportShipIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 11A5F90C1E4684D1003E4E03 /* SupportShipIcon.png */; };
+		11A5F9111E4684D1003E4E03 /* TankShipIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 11A5F90D1E4684D1003E4E03 /* TankShipIcon.png */; };
+		11A5F9121E4684D1003E4E03 /* AttackShipIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 11A5F90E1E4684D1003E4E03 /* AttackShipIcon.png */; };
+		11A5F9141E469A80003E4E03 /* ShipEditStatView.png in Resources */ = {isa = PBXBuildFile; fileRef = 11A5F9131E469A80003E4E03 /* ShipEditStatView.png */; };
+		11A5F9161E4955D2003E4E03 /* MissingItemIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 11A5F9151E4955D2003E4E03 /* MissingItemIcon.png */; };
+		11A5F9181E49568B003E4E03 /* ItemObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A5F9171E49568B003E4E03 /* ItemObject.swift */; };
+		11A5F91F1E4AAE5F003E4E03 /* RespawnItemIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 11A5F9191E4AAE5F003E4E03 /* RespawnItemIcon.png */; };
+		11A5F9201E4AAE5F003E4E03 /* RangeItemIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 11A5F91A1E4AAE5F003E4E03 /* RangeItemIcon.png */; };
+		11A5F9211E4AAE5F003E4E03 /* SpeedItemIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 11A5F91B1E4AAE5F003E4E03 /* SpeedItemIcon.png */; };
+		11A5F9221E4AAE5F003E4E03 /* AttackSpeedItemIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 11A5F91C1E4AAE5F003E4E03 /* AttackSpeedItemIcon.png */; };
+		11A5F9231E4AAE5F003E4E03 /* AttackItemIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 11A5F91D1E4AAE5F003E4E03 /* AttackItemIcon.png */; };
+		11A5F9241E4AAE5F003E4E03 /* ShieldItemIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 11A5F91E1E4AAE5F003E4E03 /* ShieldItemIcon.png */; };
 		11AF41B81E42D72A000FE7B7 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AF41B71E42D72A000FE7B7 /* UserInfo.swift */; };
 		11AF41BA1E42D7CE000FE7B7 /* ShipObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AF41B91E42D7CE000FE7B7 /* ShipObject.swift */; };
 		11BDAB9B1E04AA1500507DD6 /* GemItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BDAB9A1E04AA1500507DD6 /* GemItem.swift */; };
@@ -68,6 +81,19 @@
 		11A0D8441DFFB2590083809F /* PreBattleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreBattleView.swift; sourceTree = "<group>"; };
 		11A5F9071E4576C9003E4E03 /* ShipScrollView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ShipScrollView.png; sourceTree = "<group>"; };
 		11A5F9091E45783F003E4E03 /* ShipButtonBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ShipButtonBackground.png; sourceTree = "<group>"; };
+		11A5F90B1E4684D1003E4E03 /* UtilityShipIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UtilityShipIcon.png; sourceTree = "<group>"; };
+		11A5F90C1E4684D1003E4E03 /* SupportShipIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SupportShipIcon.png; sourceTree = "<group>"; };
+		11A5F90D1E4684D1003E4E03 /* TankShipIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TankShipIcon.png; sourceTree = "<group>"; };
+		11A5F90E1E4684D1003E4E03 /* AttackShipIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AttackShipIcon.png; sourceTree = "<group>"; };
+		11A5F9131E469A80003E4E03 /* ShipEditStatView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ShipEditStatView.png; sourceTree = "<group>"; };
+		11A5F9151E4955D2003E4E03 /* MissingItemIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MissingItemIcon.png; sourceTree = "<group>"; };
+		11A5F9171E49568B003E4E03 /* ItemObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemObject.swift; sourceTree = "<group>"; };
+		11A5F9191E4AAE5F003E4E03 /* RespawnItemIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RespawnItemIcon.png; sourceTree = "<group>"; };
+		11A5F91A1E4AAE5F003E4E03 /* RangeItemIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RangeItemIcon.png; sourceTree = "<group>"; };
+		11A5F91B1E4AAE5F003E4E03 /* SpeedItemIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SpeedItemIcon.png; sourceTree = "<group>"; };
+		11A5F91C1E4AAE5F003E4E03 /* AttackSpeedItemIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AttackSpeedItemIcon.png; sourceTree = "<group>"; };
+		11A5F91D1E4AAE5F003E4E03 /* AttackItemIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AttackItemIcon.png; sourceTree = "<group>"; };
+		11A5F91E1E4AAE5F003E4E03 /* ShieldItemIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ShieldItemIcon.png; sourceTree = "<group>"; };
 		11AF41B71E42D72A000FE7B7 /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		11AF41B91E42D7CE000FE7B7 /* ShipObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShipObject.swift; sourceTree = "<group>"; };
 		11BDAB9A1E04AA1500507DD6 /* GemItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GemItem.swift; sourceTree = "<group>"; };
@@ -132,7 +158,19 @@
 				118989471E025DAB0085F05B /* ButtonBackground.png */,
 				118989451E0240870085F05B /* SpaceBackground.jpg */,
 				11A5F9071E4576C9003E4E03 /* ShipScrollView.png */,
+				11A5F9131E469A80003E4E03 /* ShipEditStatView.png */,
 				11A5F9091E45783F003E4E03 /* ShipButtonBackground.png */,
+				11A5F9151E4955D2003E4E03 /* MissingItemIcon.png */,
+				11A5F9191E4AAE5F003E4E03 /* RespawnItemIcon.png */,
+				11A5F91A1E4AAE5F003E4E03 /* RangeItemIcon.png */,
+				11A5F91B1E4AAE5F003E4E03 /* SpeedItemIcon.png */,
+				11A5F91C1E4AAE5F003E4E03 /* AttackSpeedItemIcon.png */,
+				11A5F91D1E4AAE5F003E4E03 /* AttackItemIcon.png */,
+				11A5F91E1E4AAE5F003E4E03 /* ShieldItemIcon.png */,
+				11A5F90B1E4684D1003E4E03 /* UtilityShipIcon.png */,
+				11A5F90C1E4684D1003E4E03 /* SupportShipIcon.png */,
+				11A5F90D1E4684D1003E4E03 /* TankShipIcon.png */,
+				11A5F90E1E4684D1003E4E03 /* AttackShipIcon.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -167,6 +205,7 @@
 			children = (
 				11AF41B71E42D72A000FE7B7 /* UserInfo.swift */,
 				11AF41B91E42D7CE000FE7B7 /* ShipObject.swift */,
+				11A5F9171E49568B003E4E03 /* ItemObject.swift */,
 			);
 			name = DataObjects;
 			sourceTree = "<group>";
@@ -367,15 +406,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11A5F9111E4684D1003E4E03 /* TankShipIcon.png in Resources */,
+				11A5F9101E4684D1003E4E03 /* SupportShipIcon.png in Resources */,
+				11A5F9241E4AAE5F003E4E03 /* ShieldItemIcon.png in Resources */,
+				11A5F9121E4684D1003E4E03 /* AttackShipIcon.png in Resources */,
 				118989461E0240870085F05B /* SpaceBackground.jpg in Resources */,
 				118989481E025DAB0085F05B /* ButtonBackground.png in Resources */,
 				C960C74E1E4684FF002BE93D /* GoogleService-Info.plist in Resources */,
 				11A5F9081E4576C9003E4E03 /* ShipScrollView.png in Resources */,
+				11A5F9161E4955D2003E4E03 /* MissingItemIcon.png in Resources */,
 				11A5F90A1E45783F003E4E03 /* ShipButtonBackground.png in Resources */,
+				11A5F9141E469A80003E4E03 /* ShipEditStatView.png in Resources */,
+				11A5F9201E4AAE5F003E4E03 /* RangeItemIcon.png in Resources */,
 				11FA8E161DF9FCDC006ABAD4 /* LaunchScreen.storyboard in Resources */,
+				11A5F9221E4AAE5F003E4E03 /* AttackSpeedItemIcon.png in Resources */,
 				11FA8E131DF9FCDC006ABAD4 /* Assets.xcassets in Resources */,
 				11FA8E111DF9FCDC006ABAD4 /* Main.storyboard in Resources */,
+				11A5F91F1E4AAE5F003E4E03 /* RespawnItemIcon.png in Resources */,
+				11A5F9211E4AAE5F003E4E03 /* SpeedItemIcon.png in Resources */,
 				1189894A1E025FF50085F05B /* CoolUniverse.jpg in Resources */,
+				11A5F9231E4AAE5F003E4E03 /* AttackItemIcon.png in Resources */,
+				11A5F90F1E4684D1003E4E03 /* UtilityShipIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -544,6 +595,7 @@
 				C960C7501E49543A002BE93D /* RegisterView.swift in Sources */,
 				11A0D8411DFFB23F0083809F /* ShopView.swift in Sources */,
 				11AF41B81E42D72A000FE7B7 /* UserInfo.swift in Sources */,
+				11A5F9181E49568B003E4E03 /* ItemObject.swift in Sources */,
 				11A0D83F1DFFB2220083809F /* ShipEditView.swift in Sources */,
 				11A0D8321DFE26860083809F /* AttackShip.swift in Sources */,
 				11A0D83D1DFFB20A0083809F /* HomeView.swift in Sources */,

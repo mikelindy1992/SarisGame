@@ -14,6 +14,7 @@ class HomeView : UIViewController
     var scnView: SCNView!
     var scnScene: SCNScene!
     var cameraNode: SCNNode!
+    var allowChange: Bool = false;
     
     override func viewDidLoad()
     {
@@ -23,6 +24,10 @@ class HomeView : UIViewController
         setupScene()
         setupCamera()
         setupItems()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        allowChange = true
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
@@ -157,16 +162,28 @@ class HomeView : UIViewController
     
     func shopButtonPressed()
     {
-        self.present(ShopView(), animated: true, completion: nil)
+        if(allowChange)
+        {
+            self.present(ShopView(), animated: true, completion: nil)
+        }
+        allowChange = false;
     }
     
     func shipEditButtonPressed()
     {
-        self.present(ShipEditView(), animated: true, completion: nil)
+        if(allowChange)
+        {
+            self.present(ShipEditView(), animated: true, completion: nil)
+        }
+        allowChange = false
     }
     
     func battleButtonPressed()
     {
-        self.present(BattleWorldView(), animated: true, completion: nil)
+        if(allowChange)
+        {
+            self.present(BattleWorldView(), animated: true, completion: nil)
+        }
+        allowChange = false
     }
 }
